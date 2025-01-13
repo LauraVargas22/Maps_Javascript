@@ -81,3 +81,14 @@ const actualizarFuerza = (id, nuevaFuerza) => {
 }
 
 console.log(actualizarFuerza(2, 70))
+
+//Quinto Ejercicio: Eliminar un superhéroe usando su ID
+const eliminarSuperheroe = (id) => {
+    if (superheroes.delete(id)) {
+        console.log(`El superhéroe con el ID ${id} ha sido eliminado`);
+    } else {
+        console.log(`El superhéroe con el ID ${id} no existe`);
+    }
+}
+
+console.log(eliminarSuperheroe(2))
