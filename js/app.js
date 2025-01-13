@@ -101,4 +101,21 @@ const mostrarSuperheroes = () => {
     }
 }
 
-console.log(mostrarSuperheroes())
+console.log(mostrarSuperheroes());
+
+//Séptimo Ejercicio: Buscar el superhéroe más fuerte
+const superheroeMasFuerte = () => {
+    let superheroeMasFuerza = null;
+    let mayorFuerza = 0;
+    for (const [id, superheroe] of superheroes.entries()) {
+        if (superheroe.fuerza > mayorFuerza) {
+            mayorFuerza = superheroe.fuerza;
+            superheroeMasFuerza = superheroe.nombre;
+        }
+    }
+    console.log(`El superhéroe más fuerte es ${superheroeMasFuerza} con una fuerza de ${mayorFuerza}`);
+}
+
+console.log(superheroeMasFuerte());
+
+
