@@ -40,9 +40,9 @@ const superheroes = new Map ([
 const buscarSuperheroePorID = (id) => {
 
     if(superheroes.has(id)) {
-        alert(`Nombre: ${superheroes.get(id).nombre}, Universo ${superheroes.get(id).universo}, Poder ${superheroes.get(id).poder}, Fuerza ${superheroes.get(id).fuerza}}`)
+        console.log(`Nombre: ${superheroes.get(id).nombre}, Universo ${superheroes.get(id).universo}, Poder ${superheroes.get(id).poder}, Fuerza ${superheroes.get(id).fuerza}}`)
     } else {
-        alert(`El id ${id} no se encuentra`);
+        console.log(`El id ${id} no se encuentra`);
     }
 }
 
@@ -60,9 +60,9 @@ const buscarPorUniverso = (universoSelected) => {
     }
 
     if (resultado.length > 0) {
-        alert(`Los superhéroes en el universo ${universoSelected} son: ${resultado.join(", ")}`);
+        console.log(`Los superhéroes en el universo ${universoSelected} son: ${resultado.join(", ")}`);
     } else {
-        alert(`El universo ${universoSelected} no se ha encontrado`);
+        console.log(`El universo ${universoSelected} no se ha encontrado`);
     }
     return resultado;
 }
@@ -133,4 +133,34 @@ const combate = (id1, id2) => {
     }
 }
 
-console.log(combate())
+console.log(combate(1, 3));
+
+//Noveno Ejercicio: Agregar Habilidades Adicionales
+const agregarHabilidades = (id, nuevoPoder) => {
+    if (superheroes.has(id)) {
+        const superheroe = superheroes.get(id);
+        
+        // Cambiar la el valor de poder a un array
+        if (!Array.isArray(superheroe.poder)) {
+            superheroe.poder = [];
+        }
+
+        superheroe.poder.push(nuevoPoder);
+
+        console.log(`El superhéroe ${superheroe.nombre} tiene ahora el poder de ${nuevoPoder}`);
+    } else {
+        console.log(`El id ${id} no se ha encontrado`);
+    }
+};
+console.log(agregarHabilidades(2, 'Visión'));
+
+//Parte 2: Mostrar Habilidades
+const mostrarHabilidades = (id) => {
+    if (superheroes.has(id)) {
+        console.log(`Habilidades de ${superheroes.get(id).nombre}: ${superheroes.get(id).poder}`);
+    } else {
+        console.log(`El id ${id} no se ha encontrado`);
+    }
+}
+
+console.log(mostrarHabilidades(1))
