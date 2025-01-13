@@ -118,4 +118,19 @@ const superheroeMasFuerte = () => {
 
 console.log(superheroeMasFuerte());
 
+//Octavo Ejercicio: Combate entre dos superhéroes
+const combate = (id1, id2) => {
+    if (superheroes.has(id1) && superheroes.has(id2)) {
+        const fuerzaId1 = superheroes.get(id1).fuerza;
+        const fuerzaId2 = superheroes.get(id2).fuerza;
+        if (fuerzaId1 > fuerzaId2) {
+            console.log(`${superheroes.get(id1).nombre} (Fuerza:${superheroes.get(id1).fuerza}) vence a ${superheroes.get(id2).nombre} (Fuerza:${superheroes.get(id2).fuerza})`);
+        } else if (fuerzaId2 > fuerzaId1) {
+            console.log(`${superheroes.get(id2).nombre} (Fuerza:${superheroes.get(id2).fuerza}) vence a ${superheroes.get(id1).nombre} (Fuerza:${superheroes.get(id1).fuerza})`);
+        } else {
+            console.log(`${superheroes.get(id1).nombre} (Fuerza:${superheroes.get(id1).fuerza}) ha empatado con ${superheroes.get(id2).nombre} (Fuerza:${superheroes.get(id2).fuerza})`);
+        }
+    }
+}
 
+console.log(combate())
