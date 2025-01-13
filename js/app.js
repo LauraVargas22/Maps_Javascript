@@ -50,6 +50,21 @@ console.log(buscarSuperheroePorID(9));
 
 //Tercer Ejercicio: Crear función para buscar superhéroes por Universo
 
-const buscarPorUniverso = (universo) => {
+const buscarPorUniverso = (universoSelected) => {
+    const resultado = [];
 
+    for (const [clave, valor] of superheroes) {
+        if (valor.universo === universoSelected) {
+            resultado.push(valor.nombre);
+        } 
+    }
+
+    if (resultado.length > 0) {
+        alert(`Los superhéroes en el universo ${universoSelected} son: ${resultado.join(", ")}`);
+    } else {
+        alert(`El universo ${universoSelected} no se ha encontrado`);
+    }
+    return resultado;
 }
+
+console.log(buscarPorUniverso("DC"))
