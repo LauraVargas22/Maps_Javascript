@@ -67,4 +67,17 @@ const buscarPorUniverso = (universoSelected) => {
     return resultado;
 }
 
-console.log(buscarPorUniverso("DC"))
+console.log(buscarPorUniverso("DC"));
+
+//Cuarto Ejercicio: Actualizar el nivel de fuerza de un superhéroe
+const actualizarFuerza = (id, nuevaFuerza) => {
+    if (superheroes.has(id)) {
+        const superheroe = superheroes.get(id);
+        superheroe.fuerza = nuevaFuerza;
+        console.log(`Fuerza del superheroe ${superheroes.get(id).nombre} actualizada a ${nuevaFuerza}.`);
+    } else {
+        console.log(`El superhéroe con ID ${id} no existe.`);
+    }
+}
+
+console.log(actualizarFuerza(2, 70))
