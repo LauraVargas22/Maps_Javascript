@@ -91,4 +91,14 @@ const eliminarSuperheroe = (id) => {
     }
 }
 
-console.log(eliminarSuperheroe(2))
+console.log(eliminarSuperheroe(2));
+
+//Sexto Ejercicio: Mostrar todos los superhéroes
+const mostrarSuperheroes = () => {
+    console.log("Superhéroes:");
+    for (const [id, superheroe] of superheroes) {
+      console.log(`ID: ${id}, Nombre: ${superheroe.nombre}`);
+    }
+}
+
+console.log(mostrarSuperheroes())
